@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2010 1:42:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="net.emanifest.hibernate.TwmManifest" table="twm_manifest" catalog="emanifest">
+        <id name="serialno" type="java.lang.Integer">
+            <column name="serialno" />
+            <generator class="identity" />
+        </id>
+        <property name="registryNumber" type="string">
+            <column name="Registry_Number" length="17" />
+        </property>
+        <property name="departureDate" type="date">
+            <column name="Departure_Date" length="10" />
+        </property>
+        <property name="customsOfficeCode" type="string">
+            <column name="Customs_Office_Code" length="4" />
+        </property>
+        <property name="masterInformation" type="string">
+            <column name="Master_Information" length="35" />
+        </property>
+        <property name="lastDischargeDate" type="date">
+            <column name="Last_Discharge_Date" length="10" />
+        </property>
+        <property name="dateOfArrival" type="date">
+            <column name="Date_of_Arrival" length="10" />
+        </property>
+        <property name="timeOfArrival" type="string">
+            <column name="Time_of_Arrival" length="10" />
+        </property>
+        <property name="placeOfDepartureCode" type="string">
+            <column name="Place_of_Departure_Code" length="5" />
+        </property>
+        <property name="placeOfDestinationCode" type="string">
+            <column name="Place_of_Destination_Code" length="5" />
+        </property>
+        <property name="carrierCode" type="string">
+            <column name="Carrier_Code" length="17" />
+        </property>
+        <property name="carrierName" type="string">
+            <column name="Carrier_Name" length="35" />
+        </property>
+        <property name="carrierAddress" type="string">
+            <column name="Carrier_Address" length="35" />
+        </property>
+        <property name="nameOfTransporter" type="string">
+            <column name="Name_of_Transporter" length="27" />
+        </property>
+        <property name="placeOfTransporter" type="string">
+            <column name="Place_of_Transporter" length="35" />
+        </property>
+        <property name="modeOfTransportCode" type="string">
+            <column name="Mode_of_Transport_Code" length="3" />
+        </property>
+        <property name="nationalityOfTransporterCode" type="string">
+            <column name="Nationality_of_Transporter_Code" length="3" />
+        </property>
+        <property name="registrationNumber" type="string">
+            <column name="Registration_Number" length="35" />
+        </property>
+        <property name="registrationDate" type="date">
+            <column name="Registration_Date" length="10" />
+        </property>
+        <property name="grossTonnage" type="java.lang.Integer">
+            <column name="Gross_Tonnage" />
+        </property>
+        <property name="netTonnage" type="java.lang.Integer">
+            <column name="Net_Tonnage" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="entryDate" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

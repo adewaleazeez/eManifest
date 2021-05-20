@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManifestRegisterTransactionResponse>
+<Identification>
+<CustomsCode>01MG</CustomsCode>
+<Registry_number>MAN2</Registry_number>
+<Date>2009-09-27</Date>
+</Identification>
+<TransactionStatus>Ok</TransactionStatus>
+<Info>
+<Message>Operation completed successfully, Manifest was registered</Message>
+</Info>
+<Registration_information>
+<Registration_number>27</Registration_number>
+<Registration_year>2009</Registration_year>
+<Registration_date>2009-09-27</Registration_date>
+</Registration_information>
+</ManifestRegisterTransactionResponse>

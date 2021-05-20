@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2010 1:42:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="net.emanifest.hibernate.Xmlfolders" table="xmlfolders" catalog="emanifest">
+        <id name="serialno" type="java.lang.Integer">
+            <column name="serialno" />
+            <generator class="identity" />
+        </id>
+        <property name="manifest" type="string">
+            <column name="manifest" length="1000" />
+        </property>
+        <property name="bol" type="string">
+            <column name="bol" length="1000" />
+        </property>
+        <property name="registration" type="string">
+            <column name="registration" length="1000" />
+        </property>
+        <property name="batchfile" type="string">
+            <column name="batchfile" length="1000" />
+        </property>
+    </class>
+</hibernate-mapping>

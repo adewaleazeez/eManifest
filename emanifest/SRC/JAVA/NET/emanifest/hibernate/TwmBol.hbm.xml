@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2010 1:42:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="net.emanifest.hibernate.TwmBol" table="twm_bol" catalog="emanifest">
+        <id name="serialno" type="java.lang.Integer">
+            <column name="serialno" />
+            <generator class="identity" />
+        </id>
+        <property name="registryNumber" type="string">
+            <column name="Registry_Number" length="17" />
+        </property>
+        <property name="departureDate" type="date">
+            <column name="Departure_Date" length="10" />
+        </property>
+        <property name="bolReference" type="string">
+            <column name="Bol_Reference" length="17" />
+        </property>
+        <property name="customsOfficeCode" type="string">
+            <column name="Customs_Office_Code" length="4" />
+        </property>
+        <property name="lineNumber" type="java.lang.Integer">
+            <column name="Line_Number" />
+        </property>
+        <property name="previousDocumentReference" type="string">
+            <column name="Previous_Document_Reference" length="17" />
+        </property>
+        <property name="bolNature" type="string">
+            <column name="Bol_Nature" length="2" />
+        </property>
+        <property name="uniqueCarrierReference" type="string">
+            <column name="Unique_Carrier_Reference" length="35" />
+        </property>
+        <property name="totalNumberOfContainers" type="java.lang.Integer">
+            <column name="Total_Number_of_Containers" />
+        </property>
+        <property name="totalGrossMassManifested" type="java.lang.Integer">
+            <column name="Total_Gross_Mass_Manifested" />
+        </property>
+        <property name="volumeInCubicMeters" type="java.lang.Integer">
+            <column name="Volume_in_Cubic_Meters" />
+        </property>
+        <property name="bolTypeCode" type="string">
+            <column name="BOL_Type_Code" length="3" />
+        </property>
+        <property name="exporterCode" type="string">
+            <column name="Exporter_Code" length="17" />
+        </property>
+        <property name="exporterName" type="string">
+            <column name="Exporter_Name" length="35" />
+        </property>
+        <property name="exporterAddress" type="string">
+            <column name="Exporter_Address" length="150" />
+        </property>
+        <property name="consigneeCode" type="string">
+            <column name="Consignee_Code" length="17" />
+        </property>
+        <property name="consigneeName" type="string">
+            <column name="Consignee_Name" length="35" />
+        </property>
+        <property name="consigneeAddress" type="string">
+            <column name="Consignee_Address" length="150" />
+        </property>
+        <property name="notifyCode" type="string">
+            <column name="Notify_Code" length="17" />
+        </property>
+        <property name="notifyName" type="string">
+            <column name="Notify_Name" length="35" />
+        </property>
+        <property name="notifyAddress" type="string">
+            <column name="Notify_Address" length="150" />
+        </property>
+        <property name="placeOfLoadingCode" type="string">
+            <column name="Place_of_Loading_Code" length="5" />
+        </property>
+        <property name="placeOfUnloadingCode" type="string">
+            <column name="Place_of_Unloading_Code" length="5" />
+        </property>
+        <property name="packageTypeCode" type="string">
+            <column name="Package_Type_Code" length="17" />
+        </property>
+        <property name="numberOfPackages" type="java.lang.Integer">
+            <column name="Number_of_Packages" />
+        </property>
+        <property name="shippingMarks" type="string">
+            <column name="Shipping_Marks" length="350" />
+        </property>
+        <property name="goodsDescription" type="string">
+            <column name="Goods_Description" length="175" />
+        </property>
+        <property name="freightValue" type="java.lang.Integer">
+            <column name="Freight_Value" />
+        </property>
+        <property name="freightCurrencyCode" type="string">
+            <column name="Freight_Currency_Code" length="3" />
+        </property>
+        <property name="freightIndicatorCode" type="string">
+            <column name="Freight_Indicator_Code" length="3" />
+        </property>
+        <property name="customsValue" type="java.lang.Integer">
+            <column name="Customs_Value" />
+        </property>
+        <property name="customsCurrencyCode" type="string">
+            <column name="Customs_Currency_Code" length="3" />
+        </property>
+        <property name="transportValue" type="java.lang.Integer">
+            <column name="Transport_Value" />
+        </property>
+        <property name="transportCurrencyCode" type="string">
+            <column name="Transport_Currency_Code" length="3" />
+        </property>
+        <property name="insuranceValue" type="java.lang.Integer">
+            <column name="Insurance_Value" />
+        </property>
+        <property name="insuranceCurrencyCode" type="string">
+            <column name="Insurance_Currency_Code" length="3" />
+        </property>
+        <property name="numberOfSeals" type="java.lang.Integer">
+            <column name="Number_of_Seals" />
+        </property>
+        <property name="marksOfSeals" type="string">
+            <column name="Marks_of_Seals" length="20" />
+        </property>
+        <property name="sealingPartyCode" type="string">
+            <column name="Sealing_Party_Code" length="3" />
+        </property>
+        <property name="generalInformation" type="string">
+            <column name="General_Information" length="70" />
+        </property>
+        <property name="locationCode" type="string">
+            <column name="Location_Code" length="17" />
+        </property>
+        <property name="locationInformation" type="string">
+            <column name="Location_Information" length="35" />
+        </property>
+        <property name="containerIdentification" type="string">
+            <column name="Container_Identification" length="17" />
+        </property>
+        <property name="containerNumber" type="java.lang.Integer">
+            <column name="Container_Number" />
+        </property>
+        <property name="containerTypeCode" type="string">
+            <column name="Container_Type_Code" length="4" />
+        </property>
+        <property name="emptyFullIndicator" type="string">
+            <column name="Empty_Full_Indicator" length="3" />
+        </property>
+        <property name="marksOfSeals1" type="string">
+            <column name="Marks_of_Seals_1" length="10" />
+        </property>
+        <property name="marksOfSeals2" type="string">
+            <column name="Marks_of_Seals_2" length="10" />
+        </property>
+        <property name="marksOfSeals3" type="string">
+            <column name="Marks_of_Seals_3" length="10" />
+        </property>
+        <property name="containerSealingPartyCode" type="string">
+            <column name="Container_Sealing_Party_Code" length="3" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="entryDate" length="10" />
+        </property>
+        <property name="containerContent" type="string">
+            <column name="Container_Content" length="2000" />
+        </property>
+    </class>
+</hibernate-mapping>

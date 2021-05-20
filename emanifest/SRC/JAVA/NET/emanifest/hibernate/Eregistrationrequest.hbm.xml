@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2010 1:42:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="net.emanifest.hibernate.Eregistrationrequest" table="eregistrationrequest" catalog="emanifest">
+        <id name="serialno" type="java.lang.Integer">
+            <column name="serialno" />
+            <generator class="identity" />
+        </id>
+        <property name="registryNumber" type="string">
+            <column name="Registry_Number" length="17" />
+        </property>
+        <property name="departureDate" type="date">
+            <column name="Departure_Date" length="10" />
+        </property>
+        <property name="customsOfficeCode" type="string">
+            <column name="Customs_Office_Code" length="4" />
+        </property>
+        <property name="totalNumberOfBols" type="java.lang.Integer">
+            <column name="Total_Number_of_Bols" />
+        </property>
+        <property name="totalNumberOfContainers" type="java.lang.Integer">
+            <column name="Total_Number_of_Containers" />
+        </property>
+        <property name="totalNumberOfPackages" type="java.lang.Integer">
+            <column name="Total_Number_of_Packages" />
+        </property>
+        <property name="totalGrossMass" type="java.lang.Double">
+            <column name="Total_Gross_Mass" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

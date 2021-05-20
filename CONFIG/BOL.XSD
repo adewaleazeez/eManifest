@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+    <xsd:element name="TWM_BOL" type="BolType"/>
+    <xsd:complexType name="BolType">
+        <xsd:sequence>
+            <xsd:element name="Identification_segment" type="IdentType"/>
+            <xsd:element name="Bol_specific_segment" type="BolSpecType"/>
+            <xsd:element name="Container" type="ContainerType" minOccurs="0" maxOccurs="5000"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- Starting BOL XML Identification Segment -->
+    <xsd:complexType name="IdentType">
+        <xsd:sequence>
+            <xsd:element name="Registry_number" type="UN17"/>
+            <xsd:element name="Date" type="xsd:date"/>
+            <xsd:element name="Bol_reference" type="UN17"/>
+            <xsd:element name="Customs_office_segment">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Code" type="UN4"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- End of BOL XML Identification Segment -->
+    <!-- Starting BOL specific XML  Segment -->
+    <xsd:complexType name="BolSpecType">
+        <xsd:sequence>
+            <xsd:element name="Line_number" type="NUM8"/>
+            <xsd:element name="Previous_document_reference" type="UN17" minOccurs="0"/>
+            <xsd:element name="Bol_Nature" type="UN2"/>
+            <xsd:element name="Unique_carrier_reference" type="X35" minOccurs="0"/>
+            <xsd:element name="Total_number_of_containers" type="NUM8"/>
+            <xsd:element name="Total_gross_mass_manifested" type="D18.2"/>
+            <xsd:element name="Volume_in_cubic_meters" type="optionalD18.2" minOccurs="0"/>
+            <xsd:element name="Bol_type_segment">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Code" type="UN3"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Exporter_segment">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Code" type="UX17" minOccurs="0"/>
+                        <xsd:element name="Name" type="X35" minOccurs="0"/>
+                        <xsd:element name="Address" type="X150" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Consignee_segment">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Code" type="UX17" minOccurs="0"/>
+                        <xsd:element name="Name" type="X35" minOccurs="0"/>
+                        <xsd:element name="Address" type="X150" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Notify_segment" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Code" type="UX17" minOccurs="0"/>
+                        <xsd:element name="Name" type="X35" minOccurs="0"/>
+                        <xsd:element name="Address" type="X150" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Place_of_loading_segment">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Code" type="UX5"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Place_of_unloading_segment">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Code" type="UX5"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Packages_segment" type="PackagesType"/>
+            <xsd:element name="Shipping_marks" type="X350" minOccurs="0"/>
+            <xsd:element name="Goods_description" type="X175"/>
+            <xsd:element name="Freight_segment" type="FreightType" minOccurs="0"/>
+            <xsd:element name="Customs_segment" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:group ref="ValueCurrency"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Transport_segment" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:group ref="ValueCurrency"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Insurance_segment" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:group ref="ValueCurrency"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Seals_segment" type="SealsType" minOccurs="0"/>
+            <xsd:element name="Information_part_a" type="X70" minOccurs="0"/>
+            <xsd:element name="Operations_segment" type="OperationsType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- End of BOL specific Identification Segment -->
+    <!-- Starting BOL XML Packages Segment -->
+    <xsd:complexType name="PackagesType">
+        <xsd:sequence>
+            <xsd:element name="Package_type_code" type="UN17"/>
+            <xsd:element name="Number_of_packages" type="NUM7"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- End of BOL XML Packages Segment -->
+    <!-- Starting BOL XML Freight Segment -->
+    <xsd:complexType name="FreightType">
+        <xsd:sequence>
+            <xsd:group ref="ValueCurrency"/>
+            <xsd:element name="Indicator_segment" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Code" type="UX3"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- End of BOL XML Freight Segment -->
+    <!-- Starting BOL XML Seals Segment -->
+    <xsd:complexType name="SealsType">
+        <xsd:sequence>
+            <xsd:element name="Number_of_seals" type="N5" minOccurs="0"/>
+            <xsd:element name="Marks_of_seals" type="UX20" minOccurs="0"/>
+            <xsd:element name="Sealing_party_code" type="SealingPartyType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- End of BOL XML Seals Segment -->
+    <!-- Starting BOL XML Operations Segment -->
+    <xsd:complexType name="OperationsType">
+        <xsd:sequence>
+            <xsd:element name="Location_segment" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Code" type="UN17" minOccurs="0"/>
+                        <xsd:element name="Information" type="X35" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- End of BOL XML Operations Segment -->
+    <!-- Starting BOL XML Container_segment -->
+    <xsd:complexType name="ContainerType">
+        <xsd:sequence>
+            <xsd:element name="Reference" type="UX17"/>
+            <xsd:element name="Number" type="CtnNumberType" minOccurs="0"/>
+            <xsd:element name="Type" type="TypeType" minOccurs="0"/>
+            <xsd:element name="Empty_full" type="EmptyFullType" minOccurs="0"/>
+            <xsd:element name="Seals" type="UX10" minOccurs="0"/>
+            <xsd:element name="Marks1" type="UX10" minOccurs="0"/>
+            <xsd:element name="Marks2" type="UX10" minOccurs="0"/>
+            <xsd:element name="Sealing_party" type="SealingPartyType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- End of BOL XML Container_segment -->
+    <xsd:simpleType name="UN">
+        <xsd:restriction base="xsd:string">
+             <xsd:pattern value="[A-Z0-9a-z -_\.,:;`#\*\(\)\\/\^$%@!~'\+\|\{\}\]\[\?\t\r\n&amp;]*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="U">
+        <xsd:restriction base="UN">
+            <xsd:pattern value="[^0-9]*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UX">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[^a-z]*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="D18.2">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0.01"/>
+            <xsd:maxInclusive value="999999999999999999.99"/>
+            <xsd:pattern value="[0-9]*|.*\.[0-9]{2}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="optionalD18.2">
+        <xsd:union memberTypes="D18.2">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value=""/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:union>
+    </xsd:simpleType>
+    <xsd:simpleType name="N5">
+        <xsd:restriction base="N">
+            <xsd:minLength value="0"/>
+            <xsd:maxLength value="5"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="N">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0-9]*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="NUM">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0]|([1-9][0-9]*)"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="CtnNumberType">
+        <xsd:union memberTypes="NUM">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value=""/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:union>
+    </xsd:simpleType>
+    <xsd:simpleType name="NUM7">
+        <xsd:restriction base="NUM">
+            <xsd:maxLength value="7"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="NUM8">
+        <xsd:restriction base="NUM">
+            <xsd:maxLength value="7"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UN2">
+        <xsd:restriction base="UN">
+            <xsd:maxLength value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UN3">
+        <xsd:restriction base="UN">
+            <xsd:maxLength value="3"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UN4">
+        <xsd:restriction base="UN">
+            <xsd:maxLength value="4"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UN17">
+        <xsd:restriction base="UN">
+            <xsd:maxLength value="17"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UN35">
+        <xsd:restriction base="UN">
+            <xsd:maxLength value="35"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UX3">
+        <xsd:restriction base="UX">
+            <xsd:maxLength value="3"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UX4">
+        <xsd:restriction base="UX">
+            <xsd:maxLength value="4"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UX5">
+        <xsd:restriction base="UX">
+            <xsd:maxLength value="5"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UX10">
+        <xsd:restriction base="UX">
+            <xsd:maxLength value="10"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UX17">
+        <xsd:restriction base="UX">
+            <xsd:maxLength value="17"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="UX20">
+        <xsd:restriction base="UX">
+            <xsd:maxLength value="20"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="X">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Z0-9a-z -_\.,:;#\*\(\)\\/\^$%@!~'\+\|\{\}\]\[\?\t\r\n&#38;]*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="X35">
+        <xsd:restriction base="X">
+            <xsd:maxLength value="35"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="X70">
+        <xsd:restriction base="X">
+            <xsd:maxLength value="70"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="X150">
+        <xsd:restriction base="X">
+            <xsd:maxLength value="150"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="X175">
+        <xsd:restriction base="X">
+            <xsd:maxLength value="175"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="X350">
+        <xsd:restriction base="X">
+            <xsd:maxLength value="350"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:group name="ValueCurrency">
+        <xsd:sequence>
+            <xsd:element name="Value" type="optionalD18.2" minOccurs="0"/>
+            <xsd:element name="Currency" type="UN3" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:simpleType name="TypeType">
+        <xsd:restriction base="X">
+            <xsd:maxLength value="4"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="EmptyFullType">
+        <xsd:restriction base="X">
+            <xsd:maxLength value="3"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="SealingPartyType">
+        <xsd:restriction base="X">
+            <xsd:maxLength value="3"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

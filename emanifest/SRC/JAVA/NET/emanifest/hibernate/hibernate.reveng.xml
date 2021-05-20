@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="emanifest"/>
+  <table-filter match-name="xmlfolders"/>
+  <table-filter match-name="customs"/>
+  <table-filter match-name="eregistrationrequest"/>
+  <table-filter match-name="ports"/>
+  <table-filter match-name="packages"/>
+  <table-filter match-name="transports"/>
+  <table-filter match-name="carriers"/>
+  <table-filter match-name="nations"/>
+  <table-filter match-name="twm_bol"/>
+  <table-filter match-name="users"/>
+  <table-filter match-name="activities"/>
+  <table-filter match-name="bols"/>
+  <table-filter match-name="boltypes"/>
+  <table-filter match-name="containers"/>
+  <table-filter match-name="twm_manifest"/>
+</hibernate-reverse-engineering>

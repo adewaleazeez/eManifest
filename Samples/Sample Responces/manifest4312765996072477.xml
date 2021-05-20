@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManifestRegisterTransactionResponse>
+<Identification>
+<CustomsCode>01MG</CustomsCode>
+<Registry_number>MAN1</Registry_number>
+<Date>2009-09-30</Date>
+</Identification>
+<TransactionStatus>Error</TransactionStatus>
+<Info>
+<Message>B/Ls of this Manifest have different natures</Message>
+</Info>
+</ManifestRegisterTransactionResponse>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2010 1:42:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="net.emanifest.hibernate.Activities" table="activities" catalog="emanifest">
+        <composite-id name="id" class="net.emanifest.hibernate.ActivitiesId">
+            <key-property name="userEmail" type="string">
+                <column name="userEmail" length="50" />
+            </key-property>
+            <key-property name="activityDate" type="string">
+                <column name="activityDate" length="10" />
+            </key-property>
+            <key-property name="activityTime" type="string">
+                <column name="activityTime" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="descriptions" type="string">
+            <column name="descriptions" length="250" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

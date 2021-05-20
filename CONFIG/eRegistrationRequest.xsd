@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+    <xsd:element name="eRegistrationRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Identification"/>
+                <xsd:element ref="Totals_segment"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Identification">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Registry_number" type="UN17"/>
+                <xsd:element name="Date" type="xsd:date"/>
+                <xsd:element name="Customs_office_code" type="UN4" nillable="false"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Totals_segment">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Total_number_of_bols" type="N8"/>
+                <xsd:element name="Total_number_of_containers" type="NC8"/>
+                <xsd:element name="Total_number_of_packages" type="N8"/>
+                <xsd:element name="Total_gross_mass" type="D18.2"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:simpleType name="UN17">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Z0-9 -_\.,:;#\*()\\/]*"/>
+            <xsd:maxLength value="17"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="OptionalDate">
+        <xsd:union memberTypes="xsd:date">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value=""/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:union>
+    </xsd:simpleType>
+    <xsd:simpleType name="UN4">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Z0-9]{4}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="D18.2">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0.01"/>
+            <xsd:maxInclusive value="999999999999999999.99"/>
+            <xsd:pattern value="([0-9]*|.*\.[0-9]{2})"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="N8">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxExclusive value="100000000"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="NC8">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+             <xsd:maxExclusive value="100000000"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

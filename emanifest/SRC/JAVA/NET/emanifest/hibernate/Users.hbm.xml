@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2010 1:42:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="net.emanifest.hibernate.Users" table="users" catalog="emanifest">
+        <id name="serialno" type="java.lang.Integer">
+            <column name="serialno" />
+            <generator class="identity" />
+        </id>
+        <property name="userName" type="string">
+            <column name="userName" length="100" />
+        </property>
+        <property name="userPassword" type="string">
+            <column name="userPassword" length="50" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="firstName" length="50" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="lastName" length="50" />
+        </property>
+        <property name="active" type="string">
+            <column name="active" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

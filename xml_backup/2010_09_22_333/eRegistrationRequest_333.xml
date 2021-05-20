@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eRegistrationRequest>
+<Identification>
+<Registry_number>333</Registry_number>
+<Date>2010-09-01</Date>
+<Customs_office_code>01AP</Customs_office_code>
+</Identification>
+<Totals_segment>
+<Total_number_of_bols>4</Total_number_of_bols>
+<Total_number_of_containers>8</Total_number_of_containers>
+<Total_number_of_packages>9220</Total_number_of_packages>
+<Total_gross_mass>2220</Total_gross_mass>
+</Totals_segment>
+</eRegistrationRequest>

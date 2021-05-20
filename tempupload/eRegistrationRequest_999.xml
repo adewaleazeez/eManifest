@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eRegistrationRequest>
+<Identification>
+<Registry_number>999</Registry_number>
+<Date>2011-07-06</Date>
+<Customs_office_code>01CA</Customs_office_code>
+</Identification>
+<Totals_segment>
+<Total_number_of_bols>1</Total_number_of_bols>
+<Total_number_of_containers>0</Total_number_of_containers>
+<Total_number_of_packages>10</Total_number_of_packages>
+<Total_gross_mass>0</Total_gross_mass>
+</Totals_segment>
+</eRegistrationRequest>

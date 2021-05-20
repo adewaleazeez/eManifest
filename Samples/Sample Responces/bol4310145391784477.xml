@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BolStoreTransactionResponse>
+<Identification>
+<CustomsCode>01MG</CustomsCode>
+<Registry_number>MAN1</Registry_number>
+<Date>2009-09-30</Date>
+<Bol_reference>BL2-MAN1</Bol_reference>
+</Identification>
+<TransactionStatus>Error</TransactionStatus>
+<Info>
+<Message>Invalid nature of B/L</Message>
+</Info>
+</BolStoreTransactionResponse>

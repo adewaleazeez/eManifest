@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManifestStoreTransactionResponse>
+<Identification>
+<CustomsCode>01MG</CustomsCode>
+<Registry_number/>
+<Date>2009-09-30</Date>
+</Identification>
+<TransactionStatus>Error</TransactionStatus>
+<Info>
+<Message>VOY, input required</Message>
+</Info>
+</ManifestStoreTransactionResponse>

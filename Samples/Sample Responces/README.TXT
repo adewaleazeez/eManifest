@@ -1,0 +1,1 @@
+This xmls are received from server during the work of application.

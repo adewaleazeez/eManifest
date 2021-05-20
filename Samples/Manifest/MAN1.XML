@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TWM_Manifest>
+<Identification_segment>
+<Registry_number>MAN1</Registry_number>
+<Date>2009-09-30</Date>
+<Customs_office_segment>
+<Code>01MG</Code>
+</Customs_office_segment>
+</Identification_segment>
+<General_segment>
+<Master_information>3333</Master_information>
+<Last_discharge>2009-10-01</Last_discharge>
+<Arrival_segment>
+<Date_of_arrival>2009-10-01</Date_of_arrival>
+<Time_of_arrival>18:30:00</Time_of_arrival>
+</Arrival_segment>
+<Departure_segment>
+<Code>FRBGU</Code>
+</Departure_segment>
+<Destination_segment>
+<Code>FRLYI</Code>
+</Destination_segment>
+<Carrier_segment>
+<Code>009950</Code>
+<Name>PRINZ AND PRINZXX AMALGAMETED NIG</Name>
+<Address>5/7 ABISOGUN LEIGH ESTATE BLK3
+FLAT3 OGBA IKEJA LAGOS.</Address>
+</Carrier_segment>
+<Transport_segment>
+<Name_of_transporter>333</Name_of_transporter>
+<Place_of_transporter>3333</Place_of_transporter>
+<Mode_of_transport_segment>
+<Code>3</Code>
+</Mode_of_transport_segment>
+<Nationality_of_transport_segment>
+<Code>AD</Code>
+</Nationality_of_transport_segment>
+<Transporter_registration_segment>
+<Registration_number/>
+<Registration_date/>
+</Transporter_registration_segment>
+</Transport_segment>
+<Tonnage_segment>
+<Gross_tonnage>333</Gross_tonnage>
+<Net_tonnage>33</Net_tonnage>
+</Tonnage_segment>
+</General_segment>
+</TWM_Manifest>
